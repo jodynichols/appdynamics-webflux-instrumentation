@@ -1,7 +1,7 @@
-# AppDynamics Kafka Camel Correlation
+# AppDynamics WebFlux Instrumentation
 
 ## Use Case
-Enables AppDynamics correlation from Camel to Kafka to consumers 
+Enables HTTP Requests to and from WebFlux components.
 
 ## Installation
 
