@@ -1,0 +1,4 @@
+com\appdynamics\HttpClientOperationsAsyncExitStart.class
+com\appdynamics\WebfluxConsumerInstrumentation.class
+com\appdynamics\HttpClientOperationsAsyncExitEnd.class
+com\appdynamics\Cache.class

@@ -1,0 +1,167 @@
+<activities>
+    <producer enabled = "true" in-process = "true">
+        <instrumentation>
+                <class-name>reactor.core.publisher.MonoFlatMap$FlatMapMain</class-name>
+                <method-name>onNext</method-name>
+                <match-type>MATCHES_CLASS</match-type>
+            </instrumentation>
+        
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>POSITION</data-gatherer-type>
+                <transformer-type>GETTER_METHODS</transformer-type>
+                <position>0</position>
+                <getter-chain>this</getter-chain>
+            </payload-pointer>
+        </correlation>
+    </producer>
+    <consumer enabled="true" in-process="true">
+        <instrumentation>
+            <class-name>reactor.core.publisher.Operators$MonoSubscriber</class-name>
+            <method-name>complete</method-name>
+            <match-type>MATCHES_CLASS</match-type>
+        </instrumentation>
+            <correlation>
+                <payload-pointer>
+                <data-gatherer-type>POSITION</data-gatherer-type>
+                <transformer-type>GETTER_METHODS</transformer-type>
+                <position>0</position>
+                <getter-chain>this</getter-chain>
+            </payload-pointer>
+            </correlation>
+    </consumer>
+
+    <producer enabled = "true" in-process = "true">
+        <instrumentation>
+                <class-name>reactor.core.publisher.FluxMap$MapSubscriber</class-name>
+                <method-name>onNext</method-name>
+                <match-type>MATCHES_CLASS</match-type>
+            </instrumentation>
+        
+        <correlation>
+               <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <transformer-type>GETTER_METHODS</transformer-type>
+                <getter-chain>this</getter-chain>
+            </payload-pointer>
+        </correlation>
+    </producer>
+
+	
+	<consumer enabled = "true" in-process = "true">
+        <instrumentation>
+                <class-name>reactor.core.publisher.FluxMap$MapSubscriber</class-name>
+                <method-name>onComplete</method-name>
+                <match-type>MATCHES_CLASS</match-type>
+            </instrumentation>
+       
+            <correlation>
+               <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <transformer-type>GETTER_METHODS</transformer-type>
+                <getter-chain>this</getter-chain>
+            </payload-pointer>
+            </correlation>
+    </consumer>
+	
+	
+    <excludes filter-type="STARTSWITH" filter-value="java/,javax/,com.sun/,sun/,org/"/>
+    <excludes filter-type="STARTSWITH" filter-value="com.bea/,com.weblogic/,weblogic/,com.ibm/"/>
+
+    <producer activity-type="Thread Fork" in-process="true">
+        <instrumentation>
+            <class-name>java.lang.Thread</class-name>
+            <method-name>init</method-name>
+            <match-type>INHERITS_FROM_CLASS</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+  
+           <!--
+               Note: the absence of the <payload-operation> tag. This implies that we will use an in-memory map to correlate
+           -->
+        </correlation>
+    </producer>
+    <consumer in-process="true" identify-transaction="true">
+        <instrumentation>
+            <class-name>java.lang.Thread</class-name>
+            <method-name>run</method-name>
+            <match-type>INHERITS_FROM_CLASS</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+        </correlation>
+    </consumer>
+    <!-- runnable  config -->
+    <producer activity-type="Runnable" in-process="true">
+        <instrumentation>
+            <class-name>java.lang.Runnable</class-name>
+            <method-name>init</method-name>
+            <match-type>IMPLEMENTS_INTERFACE</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+        </correlation>
+    </producer>
+    <consumer in-process="true" identify-transaction="true">
+        <instrumentation>
+            <class-name>java.lang.Runnable</class-name>
+            <method-name>run</method-name>
+            <match-type>IMPLEMENTS_INTERFACE</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+        </correlation>
+    </consumer>
+ 
+    <!-- callable  config -->
+    <producer activity-type="Callable" in-process="true">
+        <instrumentation>
+            <class-name>java.lang.Callable</class-name>
+            <method-name>init</method-name>
+            <match-type>IMPLEMENTS_INTERFACE</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+        </correlation>
+    </producer>
+    <consumer in-process="true" identify-transaction="true">
+        <instrumentation>
+            <class-name>java.lang.Callable</class-name>
+            <method-name>run</method-name>
+            <match-type>IMPLEMENTS_INTERFACE</match-type>
+        </instrumentation>
+        <correlation>
+            <payload-pointer>
+                <data-gatherer-type>INVOKED</data-gatherer-type>
+                <getter-chain>this</getter-chain>
+                <transformer-type>GETTER_METHODS</transformer-type>
+            </payload-pointer>
+        </correlation>
+    </consumer>
+	
+
+	
+	
+</activities>
+                            
