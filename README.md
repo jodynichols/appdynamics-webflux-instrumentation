@@ -47,4 +47,6 @@ mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5
 
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5.2.24246\lib\singularity-log4j.jar -DgroupId=com.appdynamics -DartifactId=singularity-log4j -Dversion=4.5.2 -Dpackaging=jar
 
+Then simply run "mvn clean install"
+
 
