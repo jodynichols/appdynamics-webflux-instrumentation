@@ -1,7 +1,7 @@
 # AppDynamics WebFlux Instrumentation
 
 ## Use Case
-Enables HTTP Requests to and from WebFlux components. 
+Enables HTTP Requests to and from WebFlux components using the AppDynamics iSDK. 
 
 ### NOTE: 
 
