@@ -1,7 +1,7 @@
 # AppDynamics WebFlux Instrumentation
 
 ## Use Case
-Enables HTTP Requests to and from WebFlux components. NOTE, version 4.5.2 of the Java agent is required for this to work.
+Enables HTTP Requests to and from WebFlux components. NOTE, version 4.5.2 of the Java agent is required for this to work, the newer java agents are backwards compatible with older controllers (back to 4.4.1) so you should be ok upgrading the agent if your controller is 4.4.1 or newer.
 
 ## Installation
 
