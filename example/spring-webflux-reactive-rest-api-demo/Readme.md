@@ -1,6 +1,5 @@
-# Build Reactive Rest APIs with Spring WebFlux and Reactive MongoDB
+# AppDynamics Example Reactive Rest APIs with Spring WebFlux and Reactive MongoDB
 
-Read the tutorial : https://www.callicoder.com/reactive-rest-apis-spring-webflux-reactive-mongo/
 
 ## Requirements
 
@@ -22,17 +21,22 @@ git clone https://github.com/callicoder/spring-webflux-reactive-rest-api-demo.gi
 
 ```bash
 cd spring-webflux-reactive-rest-api-demo
+
 mvn package
-java -jar target/webflux-demo-0.0.1-SNAPSHOT.jar
+
+Create a backend (note server port is 8090):
+
+java -javaagent:C:\appdynamics\AppServerAgent-4.5.2.24246\javaagent.jar -Dappagent.install.dir=C:\appdynamics\AppServerAgent-4.5.2.24246\ -Dappdynamics.agent.nodeName=WebFluxN -Dappdynamics.agent.tierName=WebFluxT -Dallow.unsigned.sdk.extension.jars=true -jar webflux-demo-0.0.1-SNAPSHOT.jar --server.port=8090
+
+Create a frontend:
+
+java -javaagent:C:\appdynamics\AppServerAgent-4.5.2.24246\javaagent.jar -Dappagent.install.dir=C:\appdynamics\AppServerAgent-4.5.2.24246\ -Dappdynamics.agent.nodeName=WebFluxN2 -Dappdynamics.agent.tierName=WebFluxT2 -Dallow.unsigned.sdk.extension.jars=true -jar webflux-demo-0.0.1-SNAPSHOT.jar
+
+Apply load:
+while (true); do curl http://localhost:8080/test; done
+
+
 ```
-
-Alternatively, you can run the app without packaging it using -
-
-```bash
-mvn spring-boot:run
-```
-
-The server will start at <http://localhost:8080>.
 
 ## Exploring the Rest APIs
 
