@@ -30,14 +30,21 @@ To build this you will need to add the AppDynamics jars to your maven repo:
 e.g.
 
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\jackson-annotations-2.8.11.jar -DgroupId=com.appdynamics -DartifactId=jackson-annotations -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\jackson-core-2.8.11.jar -DgroupId=com.appdynamics -DartifactId=jackson-core -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\jackson-databind-2.8.11.1.jar -DgroupId=com.appdynamics -DartifactId=jackson-databind -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\javaagent.jar -DgroupId=com.appdynamics -DartifactId=javaagent -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\uaruleanalyzer.jar -DgroupId=com.appdynamics -DartifactId=uaruleanalyzer -Dversion=4.5.2 -Dpackaging=jar
 
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5.2.24246\lib\appagent.jar -DgroupId=com.appdynamics -DartifactId=appagent -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5.2.24246\lib\appagent-boot.jar -DgroupId=com.appdynamics -DartifactId=appagent-boot -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5.2.24246\lib\common-utils.jar -DgroupId=com.appdynamics -DartifactId=common-utils -Dversion=4.5.2 -Dpackaging=jar
+
 mvn install:install-file -Dfile=C:\appdynamics\AppServerAgent-4.5.2.24246\ver4.5.2.24246\lib\singularity-log4j.jar -DgroupId=com.appdynamics -DartifactId=singularity-log4j -Dversion=4.5.2 -Dpackaging=jar
 
 
