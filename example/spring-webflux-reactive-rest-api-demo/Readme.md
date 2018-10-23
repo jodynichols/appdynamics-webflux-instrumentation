@@ -11,13 +11,7 @@
 
 ## Steps to Setup
 
-**1. Clone the application**
-
-```bash
-git clone https://github.com/callicoder/spring-webflux-reactive-rest-api-demo.git
-```
-
-**2. Build and run the app using maven**
+**1. Build and run the app using maven**
 
 ```bash
 cd spring-webflux-reactive-rest-api-demo
@@ -56,6 +50,3 @@ The application defines following REST APIs
 4. GET /stream/tweets - Stream tweets to a browser as Server-Sent Events
 ```
 
-## Running integration tests
-
-The project also contains integration tests for all the Rest APIs. For running the integration tests, go to the root directory of the project and type `mvn test` in your terminal.
