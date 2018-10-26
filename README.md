@@ -1,9 +1,13 @@
 # AppDynamics WebFlux Instrumentation
 
 ## Use Case
-Enables HTTP Requests to and from WebFlux components. 
+Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty components using the AppDynamics iSDK. 
 
-NOTE, version 4.5.2 of the Java agent is required for this to work, the newer java agents are backwards compatible with older controllers (back to 4.4.1) so you should be ok upgrading the agent if your controller is 4.4.1 or newer.
+### NOTE: 
+
+- Version 4.5.2 of the Java agent is required for this to work, the newer java agents are backwards compatible with older controllers (back to 4.4.1) so you should be ok upgrading the agent if your controller is 4.4.1 or newer.
+
+- The jar was built using Java 1.8, feel free to rebuild it using an older java version if required.
 
 ## Installation
 
@@ -15,7 +19,7 @@ NOTE, version 4.5.2 of the Java agent is required for this to work, the newer ja
 
 ![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux.png)
 
-6.Set up a new Async Demarcation point. In the example I was using I had to set up an Async Demarcation point to track the end to end response time for the BT (not the exit call, that's what the plugin does). I did that on "reactor.ipc.netty.http.client.HttpClientOperations/setNettyResponse". There may be a better place to do this.
+6. Set up a new Async Demarcation point. In the example I was using I had to set up an Async Demarcation point to track the end to end response time for the BT (not the exit call, that's what the plugin does). I did that on "reactor.ipc.netty.http.client.HttpClientOperations/setNettyResponse". There may be a better place to do this.
 
 The results of doing that are below:
 
@@ -23,7 +27,7 @@ The results of doing that are below:
 
 ![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux3.png)
 
-7. I also noticed that I was getting a warning about ETELatencyCorrelationDelegator-btidVsTimestampMap-limit being exhausted, this can be increased by using setting a node property "ETELatencyCorrelationDelegator-btidVsTimestampMap-limit" to 2000.
+7. It's possible you may see a warning in the logs about ETELatencyCorrelationDelegator-btidVsTimestampMap-limit being exhausted, this can be increased by using setting a node property "ETELatencyCorrelationDelegator-btidVsTimestampMap-limit" to 2000.
 
 ## To build
 
