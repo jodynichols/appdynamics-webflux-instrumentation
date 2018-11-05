@@ -14,14 +14,14 @@ Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty comp
 1. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/target/AsynciSDK-1.0-SNAPSHOT.jar to /opt/appdynamics/javaagent/verx.x.x.x/sdk-plugins
 2. Change app-agent-config.xml in the following way:
 
-Remove the following lines from "bci-processing-excludes":
+-Remove the following lines from "bci-processing-excludes":
 
 	<custom-exclude filter-type="EQUALS" filter-value="io/netty/util/concurrent/DefaultThreadFactory$DefaultRunnableDecorator"/>
 	<custom-exclude filter-type="STARTSWITH" filter-value="io/netty/util/concurrent/SingleThreadEventExecutor"/>
 	<custom-exclude filter-type="STARTSWITH" filter-value="io/reactivex/netty/client/ConnectionPoolImpl"/>
-Under:
+-Under:
           include filter-type="STARTSWITH" filter-value="com.ibm.io.async"
-Add:
+-Add:
 
 	<include filter-type="STARTSWITH" filter-value="io.netty.util.concurrent.SingleThreadEventExecutor"/>
 	<include filter-type="EQUALS" filter-value="reactor.ipc.netty.tcp.TcpClient$ActiveChannelOperationFactory"/>
