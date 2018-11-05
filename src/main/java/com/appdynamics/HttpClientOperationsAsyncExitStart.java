@@ -69,9 +69,10 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
     public Map<String, String> identifyBackend(Object invokedObject, String className, String methodName,
                                                Object[] paramValues, Throwable thrownException, Object returnValue, ISDKUserContext context)
             throws ReflectorException {
+
         Map<String, String> retVal = new HashMap();
         try {
-            retVal.put("path", invokedObject.toString());
+            retVal.put("path", invokedObject.toString().replaceAll("/$", ""));
         } catch (Exception e) {
             getLogger().debug("HttpClientOperationsAsyncExitStart.identifyBackend Exception", e);
         }

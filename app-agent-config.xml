@@ -156,9 +156,6 @@
                     <custom-exclude filter-type="CONTAINS" filter-value="$$EnhancerByCGLIB$$"/>
                     <custom-exclude filter-type="EQUALS" filter-value="org.jboss.resource.adapter.jms.JmsMessageConsumer"/>
                     <custom-exclude filter-type="EQUALS" filter-value="com.ibm.ejs.jms.JMSMessageConsumerHandle"/>
-                    <custom-exclude filter-type="EQUALS" filter-value="io/netty/util/concurrent/DefaultThreadFactory$DefaultRunnableDecorator"/>
-                    <custom-exclude filter-type="STARTSWITH" filter-value="io/netty/util/concurrent/SingleThreadEventExecutor"/>
-                    <custom-exclude filter-type="STARTSWITH" filter-value="io/reactivex/netty/client/ConnectionPoolImpl"/>
                     <!--- to disable lambda classes instrumentation, use the following line
                         <custom-exclude filter-type="CONTAINS" filter-value="$$Lambda$"/>
                     -->
@@ -519,6 +516,18 @@
                     <include filter-type="STARTSWITH" filter-value="com.ibm.ws"/>
                     <include filter-type="STARTSWITH" filter-value="com.ibm.wsspi"/>
                     <include filter-type="STARTSWITH" filter-value="com.ibm.io.async"/>
+					<include filter-type="STARTSWITH" filter-value="io.netty.util.concurrent.SingleThreadEventExecutor"/>
+					<include filter-type="EQUALS" filter-value="reactor.ipc.netty.tcp.TcpClient$ActiveChannelOperationFactory"/>
+					<include filter-type="EQUALS" filter-value="io.netty.util.concurrent.AbstractEventExecutor"/>
+					<include filter-type="STARTSWITH" filter-value="io.netty.util.concurrent.DefaultPromise"/>
+										<include filter-type="STARTSWITH" filter-value="io.netty.channel.pool.SimpleChannelPool"/>
+																				<include filter-type="STARTSWITH" filter-value="reactor.ipc.netty.channel.PooledClientContextHandler"/>
+
+
+															<include filter-type="STARTSWITH" filter-value="io.netty.channel.nio.NioEventLoop"/>
+
+					
+
 
                     <!--
                     match-class
