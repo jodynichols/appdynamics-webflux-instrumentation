@@ -20,7 +20,7 @@ Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty comp
 	<custom-exclude filter-type="STARTSWITH" filter-value="io/netty/util/concurrent/SingleThreadEventExecutor"/>
 	<custom-exclude filter-type="STARTSWITH" filter-value="io/reactivex/netty/client/ConnectionPoolImpl"/>
 - Under:
-          include filter-type="STARTSWITH" filter-value="com.ibm.io.async"
+        <include filter-type="STARTSWITH" filter-value="com.ibm.io.async"/>
 - Add:
 
 	<include filter-type="STARTSWITH" filter-value="io.netty.util.concurrent.SingleThreadEventExecutor"/>
