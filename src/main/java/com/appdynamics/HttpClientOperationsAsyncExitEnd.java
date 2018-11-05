@@ -16,13 +16,13 @@ import java.util.List;
 public class HttpClientOperationsAsyncExitEnd extends AAsyncExitEnd {
     IReflector requestHeadersReflector = null;
 
-    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.http.client.HttpClientOperations";
-    private static final String METHOD_TO_INSTRUMENT = "setNettyResponse";
+    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.channel.ChannelOperations";
+    private static final String METHOD_TO_INSTRUMENT = "onHandlerTerminate";
 
     public HttpClientOperationsAsyncExitEnd(){
         super();
         requestHeadersReflector = getNewReflectionBuilder()
-                .accessFieldValue("requestHeaders", true).build();
+                .accessFieldValue("context", true).build();
     }
 
     @Override

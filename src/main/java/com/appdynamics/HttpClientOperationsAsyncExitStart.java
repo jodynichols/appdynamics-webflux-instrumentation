@@ -22,6 +22,8 @@ import java.util.Map;
  */
 public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
     private IReflector requestHeadersReflector = null;
+    private IReflector context = null;
+
     private IReflector header = null;
 
     private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.http.client.HttpClientOperations";
@@ -29,8 +31,13 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
     public HttpClientOperationsAsyncExitStart(){
         super();
+
+        context = getNewReflectionBuilder()
+                .accessFieldValue("context", true).build();
+
         requestHeadersReflector = getNewReflectionBuilder()
                 .invokeInstanceMethod("requestHeaders", true).build();
+
 
         String[] types = new String[]{String.class.getCanonicalName(),Object.class.getCanonicalName()};
 
@@ -86,7 +93,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
         try {
 
-            returnObj = requestHeadersReflector.execute(invokedObject.getClass().getClassLoader(), invokedObject);
+            returnObj = context.execute(invokedObject.getClass().getClassLoader(), invokedObject);
             //Debugging only.
             //Cache.weakHashMap.put(System.identityHashCode(returnObj),System.currentTimeMillis());
         } catch (Exception e) {
@@ -112,7 +119,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         return true;
     }
 
-    @Override
+   /* @Override
     public boolean identifyOnEnd() {
         return false;
     }
@@ -120,6 +127,6 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
     @Override
     public boolean getAsyncObjectOnEnd() {
         return false;
-    }
+    }*/
 
 }
