@@ -173,9 +173,9 @@
                     <exclude-override filter-type="EQUALS" filter-value="kafka.api.FetchResponse$$anonfun$dataGroupedByTopic$1"/>
                     <!-- overriding for supporting spray applications-->
                     <exclude-override filter-type="EQUALS" filter-value="spray.client.pipelining$$anonfun$sendReceive$1"/>
-                    <!-- overriding for supporting akka applications-->
-                    <exclude-override filter-type="EQUALS" filter-value="akka.http.scaladsl.server.Route$$anonfun$asyncHandler$1"/>
                     <!-- overriding for supporting akka-http microservice-->
+                    <exclude-override filter-type="EQUALS" filter-value="akka.http.scaladsl.server.Route$$anonfun$asyncHandler$1"/>
+                    <exclude-override filter-type="EQUALS" filter-value="akka.http.scaladsl.server.Route$$anonfun$asyncHandler$1$$anonfun$apply$2"/>
                     <exclude-override filter-type="EQUALS" filter-value="akka.http.scaladsl.server.StandardRoute$$anon$1"/>
                     <exclude-override filter-type="STARTSWITH"
                                       filter-value="akka.http.impl.engine.client.PoolSlot$SlotProcessor$$anon$1$$anon$"/>
@@ -287,10 +287,13 @@
                 with cluster name.  In any case the IP/port info goes into snapshot details. 
                  -->
                  <!--  property name="enable-cassandra-backend-ip-naming" value="true" -->
+
+                <property name="async-instrumentation-strategy" value="constructor"/>
             </configuration-properties>
             <configuration>
-                <!-- The strategy: the default "constructor" or experimental "executor" -->
-                <async-mode strategy="constructor"/>
+                <!-- Instrumentation strategy "constructor" (default) uses the <fork-config>
+                     section, while the experimental "executor" uses <async-config>.
+                -->
                 <async-config>
                   <!-- This is the configuration for the "executor" strategy -->
                     <exclude filter-type="STARTSWITH" filter-value="com.singularity.ee.agent/"/>
@@ -667,6 +670,9 @@
         <agent-service name="Agent17Service" enabled="true" minimum-java-version="1.7">
         </agent-service>
         <agent-service name="LogParserService" enabled="true">
+        </agent-service>
+        <agent-service name="ResourceMonitoringService" enabled="true">
+            <service-dependencies>BCIEngine</service-dependencies>
         </agent-service>
 
         <!-- Make sure this is the last service all the time in the config file -->
