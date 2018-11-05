@@ -47,7 +47,7 @@ The results of doing that are below:
 
 ![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux2.png)
 
-![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux3.png)
+![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux4.PNG)
 
 7. It's possible you may see a warning in the logs about ETELatencyCorrelationDelegator-btidVsTimestampMap-limit being exhausted, this can be increased by using setting a node property "ETELatencyCorrelationDelegator-btidVsTimestampMap-limit" to 2000.
 
