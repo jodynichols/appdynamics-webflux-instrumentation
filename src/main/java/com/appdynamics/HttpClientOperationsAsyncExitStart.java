@@ -33,7 +33,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         super();
 
         context = getNewReflectionBuilder()
-                .accessFieldValue("context", true).build();
+                .invokeInstanceMethod("context", true).build();
 
         requestHeadersReflector = getNewReflectionBuilder()
                 .invokeInstanceMethod("requestHeaders", true).build();

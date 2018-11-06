@@ -33,6 +33,9 @@ public class QuoteHandler {
 	@Autowired
 	private IEXTradingClient iexTradingClient;
 
+	@Autowired
+	private Google google;
+
 	public QuoteHandler(QuoteGenerator quoteGenerator) {
 		this.quoteGenerator = quoteGenerator;
 	}
@@ -86,6 +89,7 @@ public class QuoteHandler {
 		return serverRequest.bodyToMono(SearchRequest.class)
 				.doOnNext(searchRequestValidator::validate)
 				.flatMap(req -> iexTradingClient.search(getIexQueryParams(req)).map(SearchResult::new))
+				.flatMap(req -> google.search(req).map(SearchResult::new))
 				.onErrorResume(this::handleError)
 				.flatMap(response ->
 
