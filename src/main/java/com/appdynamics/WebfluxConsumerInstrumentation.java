@@ -67,7 +67,7 @@ public class WebfluxConsumerInstrumentation extends AEntry {
                                              String methodName, Object[] paramValues, ISDKUserContext context) throws ReflectorException {
         String result = null;
         if (identifyBt)
-            result = new String(invokedObject.toString());
+            result = new String(invokedObject.toString().replaceAll("/$", ""));
         return result;
     }
 
