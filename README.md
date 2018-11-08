@@ -12,7 +12,8 @@ Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty comp
 ## Installation
 
 1. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/target/AsynciSDK-1.0-SNAPSHOT.jar to /opt/appdynamics/javaagent/verx.x.x.x/sdk-plugins
-2. Change app-agent-config.xml in the following way:
+2. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/custom-activity-correlation.xml to /opt/appdynamics/javaagent/verx.x.x.x/conf to enable tracking of react threads.
+3. Change app-agent-config.xml in the following way:
 
 - **Remove** the following lines from "bci-processing-excludes":
 
@@ -35,13 +36,13 @@ Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty comp
 	<include filter-type="STARTSWITH" filter-value="io.netty.channel.nio.NioEventLoop"/>
 	```
 
-3. Add -Dallow.unsigned.sdk.extension.jars=true to the java agent command line.
-4. Restart the Java Agent process.
-5. Watch as you see the correlation in the AppDynamics controller (Can take up to 5 minutes).
+4. Add -Dallow.unsigned.sdk.extension.jars=true to the java agent command line.
+5. Restart the Java Agent process.
+6. Watch as you see the correlation in the AppDynamics controller (Can take up to 5 minutes).
 
 ![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux.png)
 
-6. Set up a new Async Demarcation point. In the example I was using I had to set up an Async Demarcation point to track the end to end response time for the BT (not the exit call, that's what the plugin does). I did that on "reactor.ipc.netty.http.server.HttpServerOperations/preSendHeadersAndStatus". There may be a better place to do this.
+7. Set up a new Async Demarcation point. In the example I was using I had to set up an Async Demarcation point to track the end to end response time for the BT (not the exit call, that's what the plugin does). I did that on "reactor.ipc.netty.http.server.HttpServerOperations/preSendHeadersAndStatus". There may be a better place to do this.
 
 The results of doing that are below:
 
@@ -49,7 +50,7 @@ The results of doing that are below:
 
 ![Screenshot](https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/webflux4.PNG)
 
-7. It's possible you may see a warning in the logs about ETELatencyCorrelationDelegator-btidVsTimestampMap-limit being exhausted, this can be increased by using setting a node property "ETELatencyCorrelationDelegator-btidVsTimestampMap-limit" to 2000.
+8. It's possible you may see a warning in the logs about ETELatencyCorrelationDelegator-btidVsTimestampMap-limit being exhausted, this can be increased by using setting a node property "ETELatencyCorrelationDelegator-btidVsTimestampMap-limit" to 2000.
 
 ## To build
 
