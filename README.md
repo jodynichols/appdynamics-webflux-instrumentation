@@ -11,7 +11,7 @@ Enables tracking and correlation of HTTP Requests to and from WebFlux/Netty comp
 
 ## Installation
 
-1. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/target/AsynciSDK-1.0-SNAPSHOT.jar to /opt/appdynamics/javaagent/verx.x.x.x/sdk-plugins
+1. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/target/AsynciSDK-1.1-SNAPSHOT.jar to /opt/appdynamics/javaagent/verx.x.x.x/sdk-plugins
 2. Copy https://github.com/appdynamicsdh/appdynamics-webflux-instrumentation/blob/master/custom-activity-correlation.xml to /opt/appdynamics/javaagent/verx.x.x.x/conf to enable tracking of react threads.
 3. Change app-agent-config.xml in the following way:
 
