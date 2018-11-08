@@ -13,13 +13,14 @@ import java.util.List;
 /**
  * created by haojun.li on 7/10/18
  */
-public class HttpClientOperationsAsyncExitEnd extends AAsyncExitEnd {
+public class ReactorClientHttpConnectorEnd extends AAsyncExitEnd {
     IReflector context = null;
 
-    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.channel.ChannelOperations";
-    private static final String METHOD_TO_INSTRUMENT = "onHandlerTerminate";
 
-    public HttpClientOperationsAsyncExitEnd(){
+    private static final String CLASS_TO_INSTRUMENT = "org.springframework.http.client.reactive.ReactorClientHttpConnector";
+    private static final String METHOD_TO_INSTRUMENT = "adaptResponse";
+
+    public ReactorClientHttpConnectorEnd(){
         super();
         context = getNewReflectionBuilder()
                 .invokeInstanceMethod("context", true).build();
@@ -42,15 +43,15 @@ public class HttpClientOperationsAsyncExitEnd extends AAsyncExitEnd {
 
 
         try {
-            returnObj = context.execute(invokedObject.getClass().getClassLoader(), invokedObject);
+            returnObj = context.execute(paramValues[0].getClass().getClassLoader(), paramValues[0]);
 
             //Debugging Only
            // long love = (long)Cache.weakHashMap.remove(System.identityHashCode(returnObj));
            // long love2 = System.currentTimeMillis()-love;
-            //getLogger().info("HttpClientOperationsAsyncExitEnd.getAsyncObject  "+System.identityHashCode(returnObj)+" Time:"+love2);
+            //getLogger().info("ReactorClientHttpConnectorEnd.getAsyncObject  "+System.identityHashCode(returnObj)+" Time:"+love2);
 
         } catch (Exception e) {
-            getLogger().debug("HttpClientOperationsAsyncExitEnd.getAsyncObject Exception",e);
+            getLogger().debug("ReactorClientHttpConnectorEnd.getAsyncObject Exception",e);
         }
         return returnObj;
 

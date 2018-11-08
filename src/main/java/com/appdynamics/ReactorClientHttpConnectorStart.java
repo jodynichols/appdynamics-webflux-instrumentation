@@ -20,16 +20,17 @@ import java.util.Map;
 /**
  * created by haojun.li on 7/10/18
  */
-public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
+public class ReactorClientHttpConnectorStart extends AAsyncExitStart {
     private IReflector requestHeadersReflector = null;
     private IReflector context = null;
-
     private IReflector header = null;
 
-    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.http.client.HttpClientOperations";
-    private static final String METHOD_TO_INSTRUMENT = "preSendHeadersAndStatus";
+    private static final String CLASS_TO_INSTRUMENT = "org.springframework.http.client.reactive.ReactorClientHttpConnector";
+    private static final String METHOD_TO_INSTRUMENT = "adaptRequest";
+    //private static final String CLASS_TO_INSTRUMENT = "org.springframework.http.client.reactive.ReactorClientHttpRequest";
+    //private static final String METHOD_TO_INSTRUMENT = "<init>";
 
-    public HttpClientOperationsAsyncExitStart(){
+    public ReactorClientHttpConnectorStart(){
         super();
 
         context = getNewReflectionBuilder()
@@ -53,6 +54,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         bldr = bldr.classMatchType(SDKClassMatchType.MATCHES_CLASS).classStringMatchType(SDKStringMatchType.EQUALS);
         bldr = bldr.methodMatchString(METHOD_TO_INSTRUMENT).methodStringMatchType(SDKStringMatchType.EQUALS);
 
+
         result.add(bldr.build());
         return result;
     }
@@ -63,10 +65,10 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
                                           ISDKUserContext context) throws ReflectorException {
 
         try {
-            Object requestHeaders = requestHeadersReflector.execute(invokedObject.getClass().getClassLoader(), invokedObject);
-            header.execute(invokedObject.getClass().getClassLoader(),requestHeaders,new Object[]{ITransactionDemarcator.APPDYNAMICS_TRANSACTION_CORRELATION_HEADER,correlationHeader});
+            Object requestHeaders = requestHeadersReflector.execute(paramValues[2].getClass().getClassLoader(), paramValues[2]);
+            header.execute(paramValues[2].getClass().getClassLoader(),requestHeaders,new Object[]{ITransactionDemarcator.APPDYNAMICS_TRANSACTION_CORRELATION_HEADER,correlationHeader});
         } catch (Exception e) {
-            getLogger().debug("HttpClientOperationsAsyncExitStart.marshalTransactionContext Exception",e);
+            getLogger().debug("ReactorClientHttpConnectorStart.marshalTransactionContext Exception",e);
 
         }
 
@@ -79,9 +81,9 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
         Map<String, String> retVal = new HashMap();
         try {
-            retVal.put("path", invokedObject.toString());
+            retVal.put("path", paramValues[2].toString());
         } catch (Exception e) {
-            getLogger().debug("HttpClientOperationsAsyncExitStart.identifyBackend Exception", e);
+            getLogger().debug("ReactorClientHttpConnectorStart.identifyBackend Exception", e);
         }
         return retVal;
 
@@ -93,11 +95,11 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
         try {
 
-            returnObj = context.execute(invokedObject.getClass().getClassLoader(), invokedObject);
+            returnObj = context.execute(paramValues[2].getClass().getClassLoader(), paramValues[2]);
             //Debugging only.
             //Cache.weakHashMap.put(System.identityHashCode(returnObj),System.currentTimeMillis());
         } catch (Exception e) {
-            getLogger().debug("HttpClientOperationsAsyncExitStart.getAsyncObject Exception",e);
+            getLogger().debug("ReactorClientHttpConnectorStart.getAsyncObject Exception",e);
         }
 
         return returnObj;
@@ -106,7 +108,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
     @Override
     public boolean isCorrelationEnabled() {
-        return true;
+        return false;
     }
 
     @Override
@@ -116,10 +118,10 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
 
     @Override
     public boolean resolveToNode() {
-        return true;
+        return false;
     }
 
-   /* @Override
+   @Override
     public boolean identifyOnEnd() {
         return false;
     }
@@ -127,6 +129,6 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
     @Override
     public boolean getAsyncObjectOnEnd() {
         return false;
-    }*/
+    }
 
 }

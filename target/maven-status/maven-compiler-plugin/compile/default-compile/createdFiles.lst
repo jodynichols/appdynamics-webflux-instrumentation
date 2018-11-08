@@ -1,4 +1,3 @@
-com\appdynamics\HttpClientOperationsAsyncExitStart.class
-com\appdynamics\WebfluxConsumerInstrumentation.class
-com\appdynamics\HttpClientOperationsAsyncExitEnd.class
+com\appdynamics\ReactorClientHttpConnectorStart.class
+com\appdynamics\ReactorClientHttpConnectorEnd.class
 com\appdynamics\Cache.class
