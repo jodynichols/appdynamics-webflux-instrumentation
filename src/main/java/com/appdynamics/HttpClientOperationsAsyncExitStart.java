@@ -119,7 +119,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         return true;
     }
 
-   /* @Override
+    @Override
     public boolean identifyOnEnd() {
         return false;
     }
@@ -127,6 +127,6 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
     @Override
     public boolean getAsyncObjectOnEnd() {
         return false;
-    }*/
+    }
 
 }
