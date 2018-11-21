@@ -14,15 +14,15 @@ import java.util.List;
  * created by haojun.li on 7/10/18
  */
 public class HttpClientOperationsAsyncExitEnd extends AAsyncExitEnd {
-    IReflector context = null;
+    IReflector handler = null;
 
     private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.channel.ChannelOperations";
     private static final String METHOD_TO_INSTRUMENT = "onHandlerTerminate";
 
     public HttpClientOperationsAsyncExitEnd(){
         super();
-        context = getNewReflectionBuilder()
-                .invokeInstanceMethod("context", true).build();
+        handler = getNewReflectionBuilder()
+                .accessFieldValue("handler", true).build();
     }
 
     @Override
@@ -42,13 +42,7 @@ public class HttpClientOperationsAsyncExitEnd extends AAsyncExitEnd {
 
 
         try {
-            returnObj = context.execute(invokedObject.getClass().getClassLoader(), invokedObject);
-
-            //Debugging Only
-           // long love = (long)Cache.weakHashMap.remove(System.identityHashCode(returnObj));
-           // long love2 = System.currentTimeMillis()-love;
-            //getLogger().info("HttpClientOperationsAsyncExitEnd.getAsyncObject  "+System.identityHashCode(returnObj)+" Time:"+love2);
-
+            returnObj = handler.execute(invokedObject.getClass().getClassLoader(), invokedObject);
         } catch (Exception e) {
             getLogger().debug("HttpClientOperationsAsyncExitEnd.getAsyncObject Exception",e);
         }

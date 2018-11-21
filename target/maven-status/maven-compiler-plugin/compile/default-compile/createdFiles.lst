@@ -1,4 +1,7 @@
-com\appdynamics\HttpClientOperationsAsyncExitStart.class
+com\appdynamics\SimpleChannelPoolNotifyHealthCheck.class
 com\appdynamics\WebfluxConsumerInstrumentation.class
 com\appdynamics\HttpClientOperationsAsyncExitEnd.class
+com\appdynamics\HttpClientOperationsAsyncExitStart.class
+com\otherstuff\SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.class
+com\otherstuff\SimpleChannelPoolNotifyHealthCheckEntry.class
 com\appdynamics\Cache.class

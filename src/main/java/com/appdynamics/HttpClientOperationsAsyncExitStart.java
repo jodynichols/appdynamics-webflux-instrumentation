@@ -21,32 +21,28 @@ import java.util.Map;
  * created by haojun.li on 7/10/18
  */
 public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
-    private IReflector requestHeadersReflector = null;
-    private IReflector context = null;
 
-    private IReflector header = null;
-
-    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.http.client.HttpClientOperations";
-    private static final String METHOD_TO_INSTRUMENT = "preSendHeadersAndStatus";
+    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.tcp.TcpClient";
+    private static final String METHOD_TO_INSTRUMENT = "newHandler";
+    private IReflector bridge = null;
+    private IReflector activeURI = null;
 
     public HttpClientOperationsAsyncExitStart(){
         super();
-
-        context = getNewReflectionBuilder()
-                .invokeInstanceMethod("context", true).build();
-
-        requestHeadersReflector = getNewReflectionBuilder()
-                .invokeInstanceMethod("requestHeaders", true).build();
+        bridge = getNewReflectionBuilder()
+                .accessFieldValue("bridge", true).build();
 
 
-        String[] types = new String[]{String.class.getCanonicalName(),Object.class.getCanonicalName()};
+        activeURI = getNewReflectionBuilder()
+                .accessFieldValue("activeURI", true).build();
 
-        header = getNewReflectionBuilder().invokeInstanceMethod("add", true, types)
-                .build();
 
     }
     @Override
     public List<Rule> initializeRules() {
+
+
+
         List<Rule> result = new ArrayList<>();
 
         Rule.Builder bldr = new Rule.Builder(CLASS_TO_INSTRUMENT);
@@ -62,13 +58,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
                                           String methodName, Object[] paramValues, Throwable thrownException, Object returnValue,
                                           ISDKUserContext context) throws ReflectorException {
 
-        try {
-            Object requestHeaders = requestHeadersReflector.execute(invokedObject.getClass().getClassLoader(), invokedObject);
-            header.execute(invokedObject.getClass().getClassLoader(),requestHeaders,new Object[]{ITransactionDemarcator.APPDYNAMICS_TRANSACTION_CORRELATION_HEADER,correlationHeader});
-        } catch (Exception e) {
-            getLogger().debug("HttpClientOperationsAsyncExitStart.marshalTransactionContext Exception",e);
-
-        }
+        Cache.weakHashMap.put(System.identityHashCode(paramValues[0]),correlationHeader);
 
     }
 
@@ -78,8 +68,21 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
             throws ReflectorException {
 
         Map<String, String> retVal = new HashMap();
+
+
         try {
-            retVal.put("path", invokedObject.toString());
+            if(paramValues[0]!=null) {
+
+
+                Object parentObj = bridge.execute(paramValues[0].getClass().getClassLoader(), paramValues[0]);
+                Object startURIObj =  activeURI.execute(paramValues[0].getClass().getClassLoader(), parentObj);
+
+                retVal.put("path", startURIObj.toString());
+            }else{
+                retVal.put("path", invokedObject.toString());
+
+            }
+
         } catch (Exception e) {
             getLogger().debug("HttpClientOperationsAsyncExitStart.identifyBackend Exception", e);
         }
@@ -92,10 +95,7 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         Object returnObj = null;
 
         try {
-
-            returnObj = context.execute(invokedObject.getClass().getClassLoader(), invokedObject);
-            //Debugging only.
-            //Cache.weakHashMap.put(System.identityHashCode(returnObj),System.currentTimeMillis());
+            returnObj = paramValues[0];
         } catch (Exception e) {
             getLogger().debug("HttpClientOperationsAsyncExitStart.getAsyncObject Exception",e);
         }
