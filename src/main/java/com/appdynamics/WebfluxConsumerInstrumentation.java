@@ -11,6 +11,8 @@ import com.appdynamics.instrumentation.sdk.toolbox.reflection.ReflectorException
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WebfluxConsumerInstrumentation extends AEntry {
 
@@ -71,7 +73,21 @@ public class WebfluxConsumerInstrumentation extends AEntry {
         if (identifyBt) {
             input = invokedObject.toString().replaceAll("/$", "");
             int paramStart = input.indexOf("?");
-            result = input.substring(0, paramStart);
+
+            // trim off any parameters - prob not needed with regex but oh well
+            if(paramStart>0)
+                result = input.substring(0, paramStart);
+            else
+                result = input;
+
+            //"bad" URLs contain account numbers as part of URL, trying to remove those from string by finding numbers after slash
+            String patternString = ".*?(/\\d)";
+            Pattern pattern = Pattern.compile(patternString);
+            Matcher matcher = pattern.matcher(result);
+
+            if (matcher.find()) {
+                result = result.substring(0, matcher.end(0)-1);
+            }
         }
         return result;
     }
