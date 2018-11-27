@@ -66,8 +66,13 @@ public class WebfluxConsumerInstrumentation extends AEntry {
     public String getBusinessTransactionName(Object invokedObject, String className,
                                              String methodName, Object[] paramValues, ISDKUserContext context) throws ReflectorException {
         String result = null;
-        if (identifyBt)
-            result = new String(invokedObject.toString().replaceAll("/$", ""));
+        String input;
+
+        if (identifyBt) {
+            input = invokedObject.toString().replaceAll("/$", "");
+            int paramStart = input.indexOf("?");
+            result = input.substring(0, paramStart);
+        }
         return result;
     }
 
