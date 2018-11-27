@@ -67,7 +67,7 @@ public class WebfluxConsumerInstrumentation extends AEntry {
     @Override
     public String getBusinessTransactionName(Object invokedObject, String className,
                                              String methodName, Object[] paramValues, ISDKUserContext context) throws ReflectorException {
-        String result = null;
+        String result = "SDK Default BT";
         String input;
 
         if (identifyBt) {
@@ -81,7 +81,7 @@ public class WebfluxConsumerInstrumentation extends AEntry {
                 result = input;
 
             //"bad" URLs contain account numbers as part of URL, trying to remove those from string by finding numbers after slash
-            String patternString = ".*?(/\\d)";
+            String patternString = ".*(/\\d)";
             Pattern pattern = Pattern.compile(patternString);
             Matcher matcher = pattern.matcher(result);
 
