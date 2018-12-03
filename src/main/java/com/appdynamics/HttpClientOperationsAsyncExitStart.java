@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * created by haojun.li on 7/10/18
@@ -68,17 +70,24 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
             throws ReflectorException {
 
         Map<String, String> retVal = new HashMap();
-
+        String pathString;
 
         try {
             if(paramValues[0]!=null) {
-
-
                 Object parentObj = bridge.execute(paramValues[0].getClass().getClassLoader(), paramValues[0]);
-                Object startURIObj =  activeURI.execute(paramValues[0].getClass().getClassLoader(), parentObj);
+                pathString =  activeURI.execute(paramValues[0].getClass().getClassLoader(), parentObj).toString();
 
-                retVal.put("path", startURIObj.toString());
+                String patternString = "(http|https)://([\\w_-]+(?:(?:\\.[\\w_-]+)+))?";
+                Pattern pattern = Pattern.compile(patternString);
+                Matcher matcher = pattern.matcher(pathString);
+
+                if(!pathString.contains("localhost"))
+                    if(matcher.find())
+                        pathString = pathString.substring(0, matcher.end());
+
+                retVal.put("path", pathString);
             }else{
+
                 retVal.put("path", invokedObject.toString());
 
             }
@@ -86,8 +95,8 @@ public class HttpClientOperationsAsyncExitStart extends AAsyncExitStart {
         } catch (Exception e) {
             getLogger().debug("HttpClientOperationsAsyncExitStart.identifyBackend Exception", e);
         }
-        return retVal;
 
+        return retVal;
     }
 
     @Override

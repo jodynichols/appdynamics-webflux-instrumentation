@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa233995-e510-4a7e-a707-136f4566d453" name="Default" comment="Updated url handling and removed custom correlation file that is not needed.">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_3_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_3_2.xml" afterDir="false" />
+    <list default="true" id="fa233995-e510-4a7e-a707-136f4566d453" name="Default" comment="Name BT based on URI up to ? (exclude parameter list)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxServerInstrumentation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/CustomTier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AsynciSDK.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AsynciSDK.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/100k.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxConsumerInstrumentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxConsumerInstrumentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/AsynciSDK-1.3-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/AsynciSDK-1.3-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/AsynciSDK-1.4-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/HttpClientOperationsAsyncExitStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/HttpClientOperationsAsyncExitStart.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/WebfluxConsumerInstrumentation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/WebfluxConsumerInstrumentation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflux.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflux2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflux3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webflux4.PNG" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,88 +32,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="HttpClientOperationsAsyncExitEnd.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitEnd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpClientOperationsAsyncExitStart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
-              <folding>
-                <element signature="e#3913#3914#0" expanded="true" />
-                <element signature="e#3940#3941#0" expanded="true" />
-                <element signature="e#3992#3993#0" expanded="true" />
-                <element signature="e#4020#4021#0" expanded="true" />
-                <element signature="e#4078#4079#0" expanded="true" />
-                <element signature="e#4106#4107#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebfluxConsumerInstrumentation.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="WebfluxConsumerInstrumentation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxConsumerInstrumentation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AEntry.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/instrumentation-javadoc/com/appdynamics/instrumentation/sdk/template/AEntry.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/otherstuff/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleChannelPoolNotifyHealthCheckEntry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/otherstuff/SimpleChannelPoolNotifyHealthCheckEntry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleChannelPoolNotifyHealthCheck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolNotifyHealthCheck.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/Cache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="234">
+              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -169,9 +102,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolAcquireHealthyFromPoolOrNew.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolNotifyHealthCheck.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitEnd.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java" />
+        <option value="$PROJECT_DIR$/stock-quotes-tier2/pom.xml" />
+        <option value="$PROJECT_DIR$/stock-quotes-tier2/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteHandler.java" />
+        <option value="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/CustomTier.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxConsumerInstrumentation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxServerInstrumentation.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java" />
       </list>
     </option>
   </component>
@@ -182,10 +120,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="236" />
-    <option name="y" value="23" />
-    <option name="width" value="1567" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="33" />
+    <option name="y" value="52" />
+    <option name="width" value="1680" />
     <option name="height" value="963" />
   </component>
   <component name="ProjectView">
@@ -193,8 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,21 +141,53 @@
             <path>
               <item name="appdynamics-webflux-instrumentation" type="b2602c69:ProjectViewProjectNode" />
               <item name="appdynamics-webflux-instrumentation" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appdynamics-webflux-instrumentation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appdynamics-webflux-instrumentation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appdynamics-webflux-instrumentation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appdynamics-webflux-instrumentation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appdynamics-webflux-instrumentation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appdynamics-webflux-instrumentation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appdynamics-webflux-instrumentation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appdynamics-webflux-instrumentation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="appdynamics" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/stock-quotes/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -229,6 +197,8 @@
       <recent name="com.appdynamics" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\DJHope\IdeaProjects\AsynciSDK\src\main\java\com\otherstuff" />
       <recent name="C:\Users\DJHope\IdeaProjects\AsynciSDK\src\test\java\com\appdynamics" />
       <recent name="C:\Users\DJHope\IdeaProjects\AsynciSDK\src\main\java\com\appdynamics" />
@@ -338,7 +308,35 @@
       <option name="project" value="LOCAL" />
       <updated>1541433501196</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Name BT based on URI up to ? (exclude parameter list)">
+      <created>1543286178038</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543286178038</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Made BT naming more robust">
+      <created>1543299918394</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1543299918394</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Made BT naming more robust">
+      <created>1543299965998</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543299965998</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Tweaks after talking with DH">
+      <created>1543301716731</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1543301716731</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -360,21 +358,33 @@
     <history-entry file="JUnit_test - 2018.11.05 at 10h 48m 20s.xml">
       <configuration name="JUnit.test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="JUnit_test - 2018.11.27 at 15h 44m 25s.xml">
+      <configuration name="JUnit.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnit_test - 2018.11.27 at 15h 44m 37s.xml">
+      <configuration name="JUnit.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnit_test - 2018.11.27 at 15h 44m 39s.xml">
+      <configuration name="JUnit.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JUnit_test - 2018.11.27 at 15h 45m 04s.xml">
+      <configuration name="JUnit.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="963" extended-state="6" />
+    <frame x="35" y="120" width="1680" height="963" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32991952" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49880952" weight="0.3295838" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50535715" side_tool="true" visible="true" weight="0.32733408" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5017857" side_tool="true" visible="true" weight="0.3295838" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49464285" visible="true" weight="0.32733408" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32991952" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49821427" weight="0.3295838" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4940476" weight="0.32733408" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -383,8 +393,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -424,7 +434,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated url handling and removed custom correlation file that is not needed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated url handling and removed custom correlation file that is not needed." />
+    <MESSAGE value="Name BT based on URI up to ? (exclude parameter list)" />
+    <MESSAGE value="Made BT naming more robust" />
+    <MESSAGE value="Tweaks after talking with DH" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tweaks after talking with DH" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -432,28 +445,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO09258F57/SampleSDKAsyncExitStart.class" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/javaagent/4.5.2/javaagent-4.5.2.jar!/com/appdynamics/instrumentation/sdk/logging/ISDKLogger.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4C4324F8/SampleSDKAsyncExitStart.class" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4C4063C8/SampleSDKAsyncExitEnd.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/OnOutBoundCompleteSDKAsyncExitStart.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/NettyResponseSDKAsyncExitEnd.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/PreSendHeadersSDKAsyncExitStart.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/OnOutBoundCompleteSDKAsyncExitEnd.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/javaagent/4.5.2/javaagent-4.5.2.jar!/com/appdynamics/instrumentation/sdk/contexts/ISDKUserContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/AbstractEventExecutorAsyncExitEnd.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/RunnableAsyncExitStart.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/javaagent/4.5.2/javaagent-4.5.2.jar!/com/appdynamics/instrumentation/sdk/AOutOfProcessCorrelator.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -487,27 +478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/SearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/SearchRequest.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/SearchRequestValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1551">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -530,16 +504,7 @@
         <state relative-caret-position="-490" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webflux3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/webflux3.png" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -563,18 +528,8 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/7zOC524D6C6/HttpClientOperationsAsyncExitStart.class" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/7zO4BC077DA/WebfluxConsumerInstrumentation.class" />
-    <entry file="file://$PROJECT_DIR$/instrumentation-javadoc/com/appdynamics/instrumentation/sdk/template/AEntry.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolDoHealthCheck.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/Cache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/instrumentation-javadoc/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -589,39 +544,127 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolNotifyHealthCheckEntry.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolDoHealthCheck.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/otherstuff/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolAcquireHealthyFromPoolOrNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/Cache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/otherstuff/SimpleChannelPoolNotifyHealthCheckEntry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
+        <state relative-caret-position="518">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolAcquireHealthyFromPoolOrNew.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/otherstuff/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/instrumentation-javadoc/com/appdynamics/instrumentation/sdk/template/AEntry.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes-tier2/mvnw" />
+    <entry file="file://$PROJECT_DIR$/stock-quotes-tier2/src/main/java/io/spring/workshop/stockquotes/Quote.java" />
+    <entry file="file://$PROJECT_DIR$/stock-quotes-tier2/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/SearchRequest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/StockQuotesApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes-tier2/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/Quote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/QuoteHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="95" column="38" selection-start-line="95" selection-start-column="38" selection-end-line="95" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/javaagent/4.5.2/javaagent-4.5.2.jar!/com/appdynamics/instrumentation/sdk/ASDKPlugin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxServerInstrumentation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="88" column="60" selection-start-line="88" selection-start-column="60" selection-end-line="88" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/SimpleChannelPoolNotifyHealthCheck.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="672">
+          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock-quotes/src/main/java/io/spring/workshop/stockquotes/CustomTier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitEnd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="165">
+          <caret line="19" column="74" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/HttpClientOperationsAsyncExitStart.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="93" column="38" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
+        <state relative-caret-position="275">
+          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="e#3913#3914#0" expanded="true" />
             <element signature="e#3940#3941#0" expanded="true" />
@@ -635,15 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/WebfluxConsumerInstrumentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="234">
+          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>

@@ -23,6 +23,6 @@ public class QuoteRouter {
 		return RouterFunctions
 				.route(GET("/streamquotes").and(accept(APPLICATION_STREAM_JSON)), quoteHandler::streamQuotes)
 				.andRoute(GET("/fetchquotes").and(accept(APPLICATION_JSON)), quoteHandler::fetchQuotes)
-                .andRoute(POST("/search").and(accept(APPLICATION_JSON)), quoteHandler::search);
+                .andRoute(POST("/search/{id}").and(accept(APPLICATION_JSON)), quoteHandler::search);
 	}
 }

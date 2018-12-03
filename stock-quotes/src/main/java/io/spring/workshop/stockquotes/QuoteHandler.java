@@ -36,6 +36,12 @@ public class QuoteHandler {
 	@Autowired
 	private Google google;
 
+	@Autowired
+	private CustomTier customTier;
+
+	@Autowired
+	private InstrumentedBackend customBackend;
+
 	public QuoteHandler(QuoteGenerator quoteGenerator) {
 		this.quoteGenerator = quoteGenerator;
 	}
@@ -90,6 +96,8 @@ public class QuoteHandler {
 				.doOnNext(searchRequestValidator::validate)
 				.flatMap(req -> iexTradingClient.search(getIexQueryParams(req)).map(SearchResult::new))
 				.flatMap(req -> google.search(req).map(SearchResult::new))
+				.flatMap(req -> customTier.search(req).map(SearchResult::new))
+				.flatMap(req -> customBackend.search(req).map(SearchResult::new))
 				.onErrorResume(this::handleError)
 				.flatMap(response ->
 

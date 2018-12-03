@@ -14,16 +14,16 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class WebfluxConsumerInstrumentation extends AEntry {
+public class WebfluxServerInstrumentation extends AEntry {
 
-    private static final String CLASS_TO_INSTRUMENT = "reactor.ipc.netty.http.server.HttpServerOperations";
-    private static final String METHOD_TO_INSTRUMENT = "onHandlerStart";
+    private static final String CLASS_TO_INSTRUMENT = "reactor.netty.http.server.HttpServerOperations";
+    private static final String METHOD_TO_INSTRUMENT = "onInboundNext";
     private IReflector requestHeadersReflector = null;
     private IReflector header = null;
 
     private boolean identifyBt = true;
 
-    public WebfluxConsumerInstrumentation() {
+    public WebfluxServerInstrumentation() {
         super();
         requestHeadersReflector = getNewReflectionBuilder()
                 .invokeInstanceMethod("requestHeaders", true).build();

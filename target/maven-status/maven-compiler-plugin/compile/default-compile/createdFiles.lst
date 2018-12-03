@@ -3,5 +3,6 @@ com/appdynamics/Cache.class
 com/otherstuff/SimpleChannelPoolNotifyHealthCheckEntry.class
 com/appdynamics/HttpClientOperationsAsyncExitStart.class
 com/appdynamics/HttpClientOperationsAsyncExitEnd.class
+com/appdynamics/WebfluxServerInstrumentation.class
 com/otherstuff/SimpleChannelPoolAcquireHealthyFromPoolOrNewExit.class
 com/appdynamics/WebfluxConsumerInstrumentation.class
